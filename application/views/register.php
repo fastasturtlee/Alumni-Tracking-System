@@ -55,7 +55,10 @@
       <option value="2023">2023</option>
     </select>
   </div>
- 
+  <div class='row'>
+    <div class='col-3'>
+<input type="file" name="img_profile" size="20" />
+    </div>
   </fieldset>
   <center>
   <button type="submit" class="btn btn-primary ">Submit</button>

@@ -4,9 +4,10 @@ class Users extends CI_Controller{
     public function register(){
 			$this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
 			$this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
-            $this->form_validation->set_rules('ernno', 'Ern No', 'required|callback_check_ernno_exists');
+            $this->form_validation->set_rules('ernno', 'Ern No', 'required|callback_check_ernno_exists|callback_check_ern_no_valid');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'matches[password]');
+            //$this->form_validation->set_rules('img_profile','Profile Photo','required');
 
 			if($this->form_validation->run() === FALSE){
 				$this->load->view('header');
@@ -97,7 +98,6 @@ public function login(){
 			$this->session->unset_userdata('user_id');
 			$this->session->unset_userdata('username');
             $this->session->unset_userdata('user_type');
-
             redirect('login');
         }
 
@@ -124,5 +124,14 @@ public function login(){
         public function delete($userid){
             $this->user_model->delete($userid);
             redirect('admin/student');
+        }
+
+        public function check_ern_no_valid($ernno){
+            $this->form_validation->set_message('check_ern_no_valid', 'That ern no is not valid.please enter the valid ern no or contact admin');
+           if($this->ern_no_model->valid($ernno)) {
+               return TRUE;
+           }else{
+               return FALSE;
+           }
         }
 }

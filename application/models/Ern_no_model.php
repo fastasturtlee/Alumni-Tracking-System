@@ -31,4 +31,14 @@ class Ern_no_model extends CI_Model{
       return FALSE;
    }
  }
+
+ public function valid($ernno){
+   $query = $this->db->get_where('ern_no', array('ern_no' => $ernno));
+   if(empty($query->row_array())){
+      return FALSE;
+   }else{
+      return TRUE;
+   }
+
+ }
 }
