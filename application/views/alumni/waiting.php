@@ -1,11 +1,4 @@
 
-<?php 
-
-if($this->session->userdata('user_type') === 'alumni' && $this->session->userdata('is_verified')== FALSE){
-  redirect('waiting');
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,42 +17,15 @@ if($this->session->userdata('user_type') === 'alumni' && $this->session->userdat
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url()?>">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?=base_url()?>events">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?=base_url()?>news">News</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?=base_url()?>careers">Careers</a>
-      </li>
-    </ul>
     <ul class = "navbar-nav ml-auto">
     <?php if($this->session->userdata('user_type') == 'alumni'):?>
-      <li class="alert-infonav-item">
-        <a class="nav-link" href="<?=base_url()?>Profile">Profile</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="<?=base_url()?>logout">Logout</a>
-      </li>
-    <?php else: ?>
-  <li class="alert-infonav-item">
-        <a class="nav-link" href="<?=base_url()?>register">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?=base_url()?>login">Sign</a>
       </li>
     <?php endif; ?>
   </ul>
   </div>
 </nav>
-<div class="container">
+
+<h2>Verification is pending now,if it's urgent contact admin</h2>

@@ -72,18 +72,23 @@ public function login(){
 
         $user_type = $this->user_model->getUserType($user_id);
 
+        $is_verified = $this->user_model->getVerifyStatus($user_id);
+
         if($user_id){
             $user_data = array(
                 'user_id' => $user_id,
                 'email_id' => $email,
                 'logged_in' => true,
-                'user_type' => $user_type
+                'user_type' => $user_type,
+                'is_verified' => $is_verified
             );
 
             $this->session->set_userdata($user_data);
             $this->session->set_flashdata('user_loggedin', 'You are now logged in');
-            
-            redirect('admin/index');
+            if($user_type == 'alumni'){
+               redirect('/');
+            }else{
+            redirect('admin/index');}
         } else {
             
             $this->session->set_flashdata('login_failed', 'Login is invalid');

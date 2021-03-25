@@ -58,3 +58,5 @@ $route['login'] = 'pages/login';
 $route['logout'] = 'users/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['waiting'] = 'alumni/waiting';

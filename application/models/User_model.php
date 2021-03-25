@@ -114,4 +114,10 @@ class User_model extends CI_Model{
         $this->db->where('userid',$userid);
         return $this->db->delete('users');
     }
+
+    public function getVerifyStatus($userid){
+        $query = $this->db->get_where('users',array('userid'=>$userid));
+
+        return $query->row(0)->verify;
+    }
 }
