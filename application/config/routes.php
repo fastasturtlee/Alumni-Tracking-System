@@ -60,3 +60,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['waiting'] = 'alumni/waiting';
+$route['chirp'] = 'alumni/chirp';

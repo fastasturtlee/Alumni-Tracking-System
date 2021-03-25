@@ -42,6 +42,11 @@ if($this->session->userdata('user_type') === 'alumni' && $this->session->userdat
       <li class="nav-item">
         <a class="nav-link" href="<?=base_url()?>careers">Careers</a>
       </li>
+      <?php if($this->session->userdata('user_type') == 'alumni'): ?>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=base_url()?>chirp">Chirp</a>
+      </li>
+      <?php endif; ?>
     </ul>
     <ul class = "navbar-nav ml-auto">
     <?php if($this->session->userdata('user_type') == 'alumni'):?>

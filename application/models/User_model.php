@@ -61,6 +61,11 @@ class User_model extends CI_Model{
         return $query->result();
     }
 
+    public function getUserName($user_id){
+        $query = $this->db->get_where('users',array('userid' => $user_id));
+        return $query->row(0)->username;
+    }
+
     public function getUserType($user_id){
         $query = $this->db->get_where('users', array('userid' => $user_id));
         return $query->row(0)->user_type;

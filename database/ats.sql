@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2021 at 05:43 PM
+-- Generation Time: Mar 25, 2021 at 07:02 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -48,6 +48,27 @@ INSERT INTO `careers` (`career_id`, `title`, `description`, `location`, `duratio
 (1, 'engineer updated', 'engineer', 'mumbai', 'min 2 year', 'full time', 0, 'https://www.google.com/', 1, '2021-03-12'),
 (3, 'teting', 'testing', 'thane', '', 'internship', 0, '', 1, '2021-03-13'),
 (4, 'xyz testing', 'xyz', 'slrte1', 'min 2 year', 'full time', 0, '', 1, '2021-03-13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chirps`
+--
+
+CREATE TABLE `chirps` (
+  `chirp_id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `chirps`
+--
+
+INSERT INTO `chirps` (`chirp_id`, `description`, `username`, `created_at`) VALUES
+(1, 'chirppp hereeee', 'Tarun', '0000-00-00 00:00:00'),
+(2, 'chirpp here 222\r\n', 'Tarun', '2021-03-25 22:51:01');
 
 -- --------------------------------------------------------
 
@@ -159,8 +180,11 @@ INSERT INTO `users` (`userid`, `username`, `emailid`, `full_name`, `mobileno`, `
 (4, 'shaan', 'shaan@mail.com', 'shaan', 54345643234, '81dc9bdb52d04dc20036dbd8313ed055', 0, 877872, 'BE', 'cmpn', 2021, '', '', '', 'admin', '2021-03-08'),
 (6, 'xyz', 'jslshashank27@gmail.com', 'Shashank Rajkamal Jaiswal', 7021420113, '21232f297a57a5a743894a0e4a801fc3', 0, 9876789871, 'BE', 'CMPN', 2021, '', '', '', 'alumni', '2021-03-11'),
 (7, 'shaifali', 'shaifali@mail.com', 'shaifali', 9876569, 'e6e061838856bf47e1de730719fb2609', 1, 7678467, 'BE', 'CMPN', 2022, '', '', '', 'alumni', '0000-00-00'),
-(8, 'Tarun', 'tarun@mail.com', 'tarun', 8767876, 'e6e061838856bf47e1de730719fb2609', 0, 87678767, 'BE', 'Cmpn', 2021, '', '', '', 'alumni', '0000-00-00'),
-(9, 'shubhu', 'shubhu@mail.com', 'shubham chaurasia', 0, '1a1dc91c907325c69271ddf0c944bc72', 1, 876787, '', '', 0, '', '', '', 'alumni', '2021-03-15');
+(8, 'Tarun', 'tarun@mail.com', 'tarun', 8767876, 'e6e061838856bf47e1de730719fb2609', 1, 87678767, 'BE', 'Cmpn', 2021, '', '', '', 'alumni', '0000-00-00'),
+(9, 'shubhu', 'shubhu@mail.com', 'shubham chaurasia', 0, '1a1dc91c907325c69271ddf0c944bc72', 1, 876787, '', '', 0, '', '', '', 'alumni', '2021-03-15'),
+(10, 'krrish', 'krrish@mail.com', 'krrish', 0, 'b798444594e68944b787906ae6ebfe1f', 0, 98767987, 'BE', 'CMPn', 2021, '', '', '', 'alumni', '2021-03-15'),
+(11, 'manju', 'manju@mail.com', 'manju', 0, '86f9ab6653b3b0151eef76b46ba2f9a5', 0, 12334225, 'be', 'cmpn', 2014, '', '', '', 'alumni', '2021-03-15'),
+(12, 'rajkamal', 'rajkamal@mail.com', 'rajkamal', 0, '1a1dc91c907325c69271ddf0c944bc72', 0, 21233, 'BE', 'cmpn', 2020, '', '', '', 'alumni', '2021-03-15');
 
 --
 -- Indexes for dumped tables
@@ -171,6 +195,12 @@ INSERT INTO `users` (`userid`, `username`, `emailid`, `full_name`, `mobileno`, `
 --
 ALTER TABLE `careers`
   ADD PRIMARY KEY (`career_id`);
+
+--
+-- Indexes for table `chirps`
+--
+ALTER TABLE `chirps`
+  ADD PRIMARY KEY (`chirp_id`);
 
 --
 -- Indexes for table `ern_no`
@@ -207,6 +237,12 @@ ALTER TABLE `careers`
   MODIFY `career_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `chirps`
+--
+ALTER TABLE `chirps`
+  MODIFY `chirp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `ern_no`
 --
 ALTER TABLE `ern_no`
@@ -228,7 +264,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
