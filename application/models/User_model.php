@@ -1,6 +1,6 @@
 <?php
 class User_model extends CI_Model{
-    public function register($enc_password){
+    public function register($enc_password,$filename){
         $data = array(
             'full_name' => $this->input->post('fullname'),
             'emailid' => $this->input->post('email'),
@@ -10,6 +10,8 @@ class User_model extends CI_Model{
             'degree' => $this->input->post('degree'),
             'branch' => $this->input->post('branch'),
             'passout_year' => $this->input->post('passyear'),
+            'mobileno' =>$this->input->post('mobileno'),
+            'profile_pic' =>$filename
         );
         return $this->db->insert('users', $data);
     }
@@ -77,10 +79,14 @@ class User_model extends CI_Model{
         return $query->row_array();
     }
 
-    public function updateUser(){
 
+    public function getProfilePic($userid){
+        $query = $this->db->get_where('users',array('userid'=>$userid));
+        return $query->row(0)->profile_pic;
+    }
+    public function updateUser($userid,$filename){
         $data = array(
-            'full_name'=>$this->input->post('full_name'),
+            'full_name'=>$this->input->post('fullname'),
             'mobileno'=> $this->input->post('mobileno'),
             'ern_no'=> $this->input->post('ern_no'),
             'degree'=>$this->input->post('degree'),
@@ -89,8 +95,11 @@ class User_model extends CI_Model{
             'proffession'=>$this->input->post('proffession'),
             'company_name'=>$this->input->post('company_name'),
             'income'=>$this->input->post('income'),
+            'profile_pic' => $filename
         );
-        $userid = $this->input->post('userid');
+        
+
+                
         $this->db->where('userid',$userid);
         return $this->db->update('users',$data);
 

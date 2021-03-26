@@ -7,7 +7,9 @@ class Users extends CI_Controller{
             $this->form_validation->set_rules('ernno', 'Ern No', 'required|callback_check_ernno_exists|callback_check_ern_no_valid');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'matches[password]');
-            //$this->form_validation->set_rules('img_profile','Profile Photo','required');
+            if (empty($_FILES['img_profile'])){
+             $this->form_validation->set_rules('img_profile', 'Profile Photo', 'required');
+            }
 
 			if($this->form_validation->run() === FALSE){
 				$this->load->view('header');
@@ -15,10 +17,29 @@ class Users extends CI_Controller{
 				$this->load->view('footer');
 			} else {
 				// Encrypt password
-				$enc_password = md5($this->input->post('password'));
-
-				$this->user_model->register($enc_password);
-				redirect('posts');
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['max_size']             = 2000;
+                $config['encrypt_name']         = TRUE;
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('img_profile'))
+                {
+                    $uploadedData = $this->upload->data();
+                    $filename = $uploadedData['file_name'];
+                    if($filename == file_exists('uploads/'.$filename))
+                    $enc_password = md5($this->input->post('password'));
+                    $this->user_model->register($enc_password,$filename);
+                    redirect('login');
+                       
+                }
+                else
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                    $this->load->view('header');
+				    $this->load->view('register',$error);
+				    $this->load->view('footer');
+                }
+				
 			}
     }
 
@@ -112,8 +133,33 @@ public function login(){
         }
 
         public function update(){
-            $this->user_model->updateUser();
-            redirect('admin/index');
+            $userid = $this->input->post('userid');
+            $config['upload_path']          = './uploads/';
+            $config['allowed_types']        = 'jpg|png|jpeg';
+            $config['max_size']             = 2000;
+            $config['encrypt_name']         = TRUE;
+            $this->load->library('upload', $config);
+            $user = $this->user_model->getUser($userid);
+            
+            if ($this->upload->do_upload('img_profile'))
+            {
+                if($user['profile_pic'] && file_exists('uploads/'.$user['profile_pic'])){
+                    $filepath = 'uploads/'.$user['profile_pic'];
+                    unlink($filepath);
+                }
+                $uploadedData = $this->upload->data();
+                $filename = $uploadedData['file_name'];
+                $this->user_model->updateUser($userid,$filename);
+                redirect('admin/index');
+                   
+            }
+            else
+            {
+                $filename = $user['profile_pic'];
+                $this->user_model->updateUser($userid,$filename);               
+                redirect('admin/index');                
+            }
+            
         }
 
         public function verify($userid){

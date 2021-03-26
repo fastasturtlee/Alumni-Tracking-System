@@ -3,12 +3,16 @@ $this->load->view('admin/sidebar');
 $this->load->view('admin/header');
  ?>
 
-<?php echo form_open('users/update'); ?>
+<?php echo form_open_multipart('users/update'); ?>
 <fieldset>
   <legend>Update User Profile</legend>
   <div>
-  <input type="hidden" name="userid" value="<?= $user['userid'];?>"
+  <input type="hidden" name="userid" value="<?= $user['userid'];?>">
   </div>
+  <center>
+  <img src="<?=base_url('uploads/'.$user['profile_pic']);?>" alt="profile pic" class="shadow" width="150px">
+    <input type="file" class="pt-1" name="img_profile" size="20">
+  </center>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">Username</label>
   <input type="text" name="username" class="form-control" placeholder="Username" value="<?= $user['username']; ?>" id="inputDefault">
@@ -19,7 +23,7 @@ $this->load->view('admin/header');
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Mobile Number</label>
-  <input type="text" class="form-control" value="<?= $user['mobileno']; ?>" name="mobno" id="inputDefault">
+  <input type="text" class="form-control" value="<?= $user['mobileno']; ?>" name="mobileno" id="inputDefault">
 </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
@@ -27,7 +31,7 @@ $this->load->view('admin/header');
     <h3>Degree Information</h3>
     <div class="form-group">
   <label class="col-form-label" for="inputDefault">ERN No</label>
-  <input type="text" name="ernno" class="form-control" value="<?= $user['ern_no']; ?>" id="inputDefault">
+  <input type="text" name="ern_no" class="form-control" value="<?= $user['ern_no']; ?>" id="inputDefault">
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Degree</label>

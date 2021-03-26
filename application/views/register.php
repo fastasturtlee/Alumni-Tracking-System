@@ -1,43 +1,43 @@
 <?php echo validation_errors() ?>
 
-<?php echo form_open('users/register') ?>
+<?php echo form_open_multipart('users/register') ?>
   <fieldset>
   <legend>Register Yourself</legend>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">Username</label>
-  <input type="text" name="username" class="form-control" placeholder="Username" id="inputDefault">
+  <input type="text" name="username" class="form-control" placeholder="Username" id="username">
 </div>
     <div class="form-group">
   <label class="col-form-label" for="inputDefault">Full Name</label>
-  <input type="text" name="fullname" class="form-control" placeholder="Full Name" id="inputDefault">
+  <input type="text" name="fullname" class="form-control" placeholder="Full Name" id="fullname">
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Mobile Number</label>
-  <input type="text" class="form-control" placeholder="Mobile Number" name="mobileno" id="inputDefault">
+  <input type="text" class="form-control" placeholder="Mobile Number" name="mobileno" id="mobileno">
 </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">    </div>
+      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">    </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="password" placeholder="Password">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Confirm Password</label>
-      <input type="password" class="form-control" name="confirm_password" id="exampleInputPassword" placeholder="Password">
+      <input type="password" class="form-control" name="confirm_password" id="confirmpassword" placeholder="Password">
     </div>
     <h3>Degree Information</h3>
     <div class="form-group">
   <label class="col-form-label" for="inputDefault">ERN No</label>
-  <input type="text" name="ernno" class="form-control" placeholder="ERN NO" id="inputDefault">
+  <input type="text" name="ernno" class="form-control" placeholder="ERN NO" id="ernno">
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Degree</label>
-  <input type="text" name="degree" class="form-control" placeholder="Degree" id="inputDefault">
+  <input type="text" name="degree" class="form-control" placeholder="Degree" id="degree">
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Branch</label>
-  <input type="text" name="branch" class="form-control" placeholder="Branch" id="inputDefault">
+  <input type="text" name="branch" class="form-control" placeholder="Branch" id="branch">
 </div>
 <div class="form-group">
 <label class="col-form-label" for="inputDefault">Year of Passout</label>
