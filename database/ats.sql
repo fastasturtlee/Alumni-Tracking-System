@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2021 at 07:02 PM
+-- Generation Time: Mar 26, 2021 at 04:26 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -157,6 +157,7 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `emailid` varchar(255) NOT NULL,
   `full_name` varchar(255) NOT NULL,
+  `profile_pic` varchar(255) NOT NULL,
   `mobileno` bigint(20) NOT NULL,
   `password` varchar(255) NOT NULL,
   `verify` int(11) NOT NULL DEFAULT 0,
@@ -175,16 +176,17 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userid`, `username`, `emailid`, `full_name`, `mobileno`, `password`, `verify`, `ern_no`, `degree`, `branch`, `passout_year`, `proffession`, `company_name`, `income`, `user_type`, `created_at`) VALUES
-(1, 'sandy', 'sandy@mail.com', 'sandhya gaud', 123456, 'e6e061838856bf47e1de730719fb2609', 1, 1234322, 'BE', 'CMPN', 2021, '', '', '0', 'admin', '0000-00-00'),
-(4, 'shaan', 'shaan@mail.com', 'shaan', 54345643234, '81dc9bdb52d04dc20036dbd8313ed055', 0, 877872, 'BE', 'cmpn', 2021, '', '', '', 'admin', '2021-03-08'),
-(6, 'xyz', 'jslshashank27@gmail.com', 'Shashank Rajkamal Jaiswal', 7021420113, '21232f297a57a5a743894a0e4a801fc3', 0, 9876789871, 'BE', 'CMPN', 2021, '', '', '', 'alumni', '2021-03-11'),
-(7, 'shaifali', 'shaifali@mail.com', 'shaifali', 9876569, 'e6e061838856bf47e1de730719fb2609', 1, 7678467, 'BE', 'CMPN', 2022, '', '', '', 'alumni', '0000-00-00'),
-(8, 'Tarun', 'tarun@mail.com', 'tarun', 8767876, 'e6e061838856bf47e1de730719fb2609', 1, 87678767, 'BE', 'Cmpn', 2021, '', '', '', 'alumni', '0000-00-00'),
-(9, 'shubhu', 'shubhu@mail.com', 'shubham chaurasia', 0, '1a1dc91c907325c69271ddf0c944bc72', 1, 876787, '', '', 0, '', '', '', 'alumni', '2021-03-15'),
-(10, 'krrish', 'krrish@mail.com', 'krrish', 0, 'b798444594e68944b787906ae6ebfe1f', 0, 98767987, 'BE', 'CMPn', 2021, '', '', '', 'alumni', '2021-03-15'),
-(11, 'manju', 'manju@mail.com', 'manju', 0, '86f9ab6653b3b0151eef76b46ba2f9a5', 0, 12334225, 'be', 'cmpn', 2014, '', '', '', 'alumni', '2021-03-15'),
-(12, 'rajkamal', 'rajkamal@mail.com', 'rajkamal', 0, '1a1dc91c907325c69271ddf0c944bc72', 0, 21233, 'BE', 'cmpn', 2020, '', '', '', 'alumni', '2021-03-15');
+INSERT INTO `users` (`userid`, `username`, `emailid`, `full_name`, `profile_pic`, `mobileno`, `password`, `verify`, `ern_no`, `degree`, `branch`, `passout_year`, `proffession`, `company_name`, `income`, `user_type`, `created_at`) VALUES
+(1, 'sandy', 'sandy@mail.com', 'sandhya gaud', '', 123456, 'e6e061838856bf47e1de730719fb2609', 1, 1234322, 'BE', 'CMPN', 2021, '', '', '0', 'admin', '0000-00-00'),
+(4, 'shaan', 'shaan@mail.com', 'shaan', '', 54345643234, '81dc9bdb52d04dc20036dbd8313ed055', 0, 877872, 'BE', 'cmpn', 2021, '', '', '', 'admin', '2021-03-08'),
+(6, 'xyz', 'jslshashank27@gmail.com', 'Shashank Rajkamal Jaiswal', '', 7021420113, '21232f297a57a5a743894a0e4a801fc3', 0, 9876789871, 'BE', 'CMPN', 0, '', '', '', 'alumni', '2021-03-11'),
+(7, 'shaifali', 'shaifali@mail.com', 'shaifali', '', 9876569, 'e6e061838856bf47e1de730719fb2609', 1, 7678467, 'BE', 'CMPN', 0, '', '', '', 'alumni', '0000-00-00'),
+(8, 'Tarun', 'tarun@mail.com', 'tarun', '', 8767876, 'e6e061838856bf47e1de730719fb2609', 1, 87678767, 'BE', 'Cmpn', 0, '', '', '', 'alumni', '0000-00-00'),
+(9, 'shubhu', 'shubhu@mail.com', 'shubham chaurasia', '', 0, '1a1dc91c907325c69271ddf0c944bc72', 1, 876787, '', '', 0, '', '', '', 'alumni', '2021-03-15'),
+(10, 'krrish', 'krrish@mail.com', 'krrish', '', 0, 'b798444594e68944b787906ae6ebfe1f', 0, 98767987, 'BE', 'CMPn', 2021, '', '', '', 'alumni', '2021-03-15'),
+(11, 'manju', 'manju@mail.com', 'manju', '', 0, '86f9ab6653b3b0151eef76b46ba2f9a5', 0, 12334225, 'be', 'cmpn', 2014, '', '', '', 'alumni', '2021-03-15'),
+(12, 'rajkamal', 'rajkamal@mail.com', 'rajkamal', '', 0, '1a1dc91c907325c69271ddf0c944bc72', 0, 21233, 'BE', 'cmpn', 2020, '', '', '', 'alumni', '2021-03-15'),
+(16, 'kartavya', 'kartu@mail.com', 'kartavya jani', '', 7999919331, '145c97437bf81a2f991542bf0da3824d', 1, 6132346, 'be', 'cmpn', 0, '', '', '', 'alumni', '2021-03-26');
 
 --
 -- Indexes for dumped tables
@@ -264,7 +266,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
