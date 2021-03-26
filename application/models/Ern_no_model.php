@@ -10,6 +10,7 @@ class Ern_no_model extends CI_Model{
  public function getErn(){
     $this->db->select('*');
     $this->db->from('ern_no');
+    $this->db->order_by('id','DESC');
     $query = $this->db->get();
     return $query->result();      
  }

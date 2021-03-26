@@ -10,8 +10,9 @@ $this->load->view('admin/header');
   <input type="hidden" name="userid" value="<?= $user['userid'];?>">
   </div>
   <center>
-  <img src="<?=base_url('uploads/'.$user['profile_pic']);?>" alt="profile pic" class="shadow" width="150px">
-    <input type="file" class="pt-1" name="img_profile" size="20">
+  <div>
+  <img src="<?=base_url('uploads/'.$user['profile_pic']);?>" alt="profile pic" class="shadow" width="150px"></div>
+    <input type="file" class="pt-1" class="pt-1" name="img_profile" size="20">
   </center>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">Username</label>

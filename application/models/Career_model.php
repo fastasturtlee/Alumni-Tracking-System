@@ -17,6 +17,7 @@ class Career_model extends CI_Model{
     public function getCareers(){
         $this->db->select('*');
         $this->db->from('careers');
+        $this->db->order_by('career_id',"DESC");
         $query = $this->db->get();
         return $query->result();        
 

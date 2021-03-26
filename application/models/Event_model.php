@@ -20,6 +20,7 @@ class Event_model extends CI_Model{
     public function getEvents(){
         $this->db->select('*');
         $this->db->from('events');
+        $this->db->order_by('event_id','DESC');
         $query = $this->db->get();
         return $query->result();        
 
