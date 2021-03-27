@@ -11,7 +11,11 @@ $this->load->view('admin/header');
   </div>
   <center>
   <div>
-  <img src="<?=base_url('uploads/'.$user['profile_pic']);?>" alt="profile pic" class="shadow profile_pic" width="150px"></div>
+  <?php if(empty($user['profile_pic'])):?>
+  <img src="<?=base_url('assets\images\noprofile.jpg')?>" alt="profile pic" class="shadow profile_pic" width="150px"></div>
+  <?php else: ?>
+    <img src="<?=base_url('uploads/'.$user['profile_pic']);?>" alt="profile pic" class="shadow profile_pic" width="150px"></div>
+  <?php endif; ?>
     <input type="file" class="pt-1" class="pt-1" name="img_profile" size="20">
   </center>
   <div class="form-group">

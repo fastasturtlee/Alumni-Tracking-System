@@ -1,5 +1,4 @@
 <?php echo validation_errors() ?>
-
 <?php echo form_open_multipart('users/register') ?>
   <fieldset>
   <legend>Register Yourself</legend>

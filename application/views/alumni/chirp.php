@@ -20,7 +20,11 @@
   <div class="card-body">
   <div class='row'>
     <div class="col-2">
-  <img src="<?=base_url('uploads/'.$chirp->profile_pic)?>" alt="profile pic"  width="35px" class="profile_pic shadow"></div>
+    <?php if(empty($chirp->profile_pic)):?>
+  <img src="<?=base_url('assets\images\noprofile.jpg')?>" alt="profile pic" class="shadow profile_pic" width="35px"></div>
+  <?php else: ?>
+    <img src="<?=base_url('uploads/'.$chirp->profile_pic);?>" alt="profile pic" width="35px" class="shadow profile_pic"></div>
+  <?php endif; ?>
   <div class="col-8">
   <b class=""><?=$chirp->username?></b>
   </div>
