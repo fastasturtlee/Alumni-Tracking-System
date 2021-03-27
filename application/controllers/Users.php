@@ -10,7 +10,6 @@ class Users extends CI_Controller{
             if (empty($_FILES['img_profile'])){
              $this->form_validation->set_rules('img_profile', 'Profile Photo', 'required');
             }
-
 			if($this->form_validation->run() === FALSE){
 				$this->load->view('header');
 				$this->load->view('register');
