@@ -20,10 +20,12 @@
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <?php foreach($users as $user): ?>
+  <?php 
+  $i=0;
+  foreach($users as $user): ?>
   <?php if($user->user_type =='alumni'):?>
   <tr class="table-secondary">
-      <th scope="row"><?=$user->userid?></th>
+      <th scope="row"><?=++$i;?></th>
       <td><?=$user->full_name?></td>
       <td><?=$user->emailid?></td>
       <td><?=$user->mobileno?></td>

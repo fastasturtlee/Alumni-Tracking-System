@@ -15,10 +15,16 @@
 <?php foreach($chirps as $chirp): ?>
 <br>
 <center>
-<div class="card shadow p-3 bg-white rounded" style="width: 50rem;">
+<div class="card shadow p-3 bg-white rounded" style="width: 50rem; height:200px;">
 <small style="text-align : right;"><?=$chirp->created_at?> </small>
   <div class="card-body">
-  <b><?=$chirp->username?></b>
+  <div class='row'>
+    <div class="col-2">
+  <img src="<?=base_url('uploads/'.$chirp->profile_pic)?>" alt="profile pic"  width="35px" class="profile_pic shadow"></div>
+  <div class="col-8">
+  <b class=""><?=$chirp->username?></b>
+  </div>
+  </div>
   <hr>
   <p class="card-text"><?=$chirp->description?></p>
   </div>

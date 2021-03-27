@@ -12,6 +12,7 @@ if($this->session->userdata('user_type') === 'alumni' && $this->session->userdat
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Alumni Tracking System</title>
 <link type="text/css" rel="stylesheet" href="<?= base_url('assets\css\bootstrap.css')?>" />
+<link type="text/css" rel="stylesheet" href="<?=base_url('assets\css\syle.css')?>" />
 <script src="<?= base_url("assets\js\jquery-3.5.1.min.js")?>"></script>
 <script src="<?= base_url('assets\js\bootstrap.min.js')?>"></script>
 <script src="//geodata.solutions/includes/countrystatecity.js"></script>

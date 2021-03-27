@@ -185,4 +185,13 @@ public function login(){
                return FALSE;
            }
         }
+
+        public function fetchData(){
+            $years = array('2014','2015','2016','2017','2018','2019','2020','2021','2022','2023');
+            foreach($years as $year){
+            $data['$year'] = $this->user_model->noRegistered($year);
+            }
+            return $data;
+
+        }
 }

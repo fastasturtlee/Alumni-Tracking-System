@@ -135,4 +135,14 @@ class User_model extends CI_Model{
 
         return $query->row(0)->verify;
     }
+
+    public function noRegistered($year){
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->like('passout_year', $year);
+        $query = $this->db->get();
+        $data = $query->num_rows();
+        return $data;
+
+    }
 }
