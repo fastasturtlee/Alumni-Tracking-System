@@ -59,5 +59,7 @@ $route['logout'] = 'users/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['profile/(:any)'] = 'alumni/profile/$1';
 $route['waiting'] = 'alumni/waiting';
 $route['chirp'] = 'alumni/chirp';
+

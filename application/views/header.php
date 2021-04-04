@@ -52,7 +52,7 @@ if($this->session->userdata('user_type') === 'alumni' && $this->session->userdat
     <ul class = "navbar-nav ml-auto">
     <?php if($this->session->userdata('user_type') == 'alumni'):?>
       <li class="alert-infonav-item">
-        <a class="nav-link" href="<?=base_url()?>Profile">Profile</a>
+        <a class="nav-link" href="<?=base_url()?>profile/<?=$this->session->userdata('user_id');?>">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?=base_url()?>logout">Logout</a>
