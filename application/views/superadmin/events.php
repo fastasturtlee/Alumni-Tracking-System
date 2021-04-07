@@ -1,3 +1,12 @@
+<?php 
+if((!$this->session->userdata('logged_in'))){
+    show_404();
+}
+?>
+<?php
+if($this->session->userdata('user_type') === 'alumni' || $this->session->userdata('user_type') === 'admin')
+    show_404();
+?>
 
 <button onclick="location.href ='<?=base_url('events/create')?>';" type="button" class="btn btn-primary btn-lg">Add events</button>
 <hr>

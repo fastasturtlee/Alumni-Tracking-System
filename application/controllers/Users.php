@@ -139,6 +139,7 @@ public function login(){
             $config['encrypt_name']         = TRUE;
             $this->load->library('upload', $config);
             $user = $this->user_model->getUser($userid);
+            $currentuser = $this->input->post('currentuser');
             
             if ($this->upload->do_upload('img_profile'))
             {
@@ -149,14 +150,14 @@ public function login(){
                 $uploadedData = $this->upload->data();
                 $filename = $uploadedData['file_name'];
                 $this->user_model->updateUser($userid,$filename);
-                redirect('admin/index');
+                redirect($currentuser.'/student');
                    
             }
             else
             {
                 $filename = $user['profile_pic'];
                 $this->user_model->updateUser($userid,$filename);               
-                redirect('admin/index');                
+                redirect($currentuser.'/student');               
             }
             
         }

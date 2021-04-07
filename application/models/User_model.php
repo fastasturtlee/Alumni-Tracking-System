@@ -96,7 +96,8 @@ class User_model extends CI_Model{
             'proffession'=>$this->input->post('proffession'),
             'company_name'=>$this->input->post('company_name'),
             'income'=>$this->input->post('income'),
-            'profile_pic' => $filename
+            'profile_pic' => $filename,
+            'user_type' => $this->input->post('usertype'),
         );
         
 

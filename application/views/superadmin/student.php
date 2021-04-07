@@ -1,3 +1,12 @@
+<?php 
+if((!$this->session->userdata('logged_in'))){
+    show_404();
+}
+?>
+<?php
+if($this->session->userdata('user_type') === 'alumni' || $this->session->userdata('user_type') === 'admin')
+    show_404();
+?>
 
 
 <br>
@@ -21,7 +30,7 @@
   <?php 
   $i=0;
   foreach($users as $user): ?>
-  <?php if($user->user_type =='alumni'):?>
+  <?php if($user->user_type =='alumni' || $user->user_type =='admin'):?>
   <tr class="table-secondary">
       <th scope="row"><?=++$i;?></th>
       <td><?=$user->full_name?></td>

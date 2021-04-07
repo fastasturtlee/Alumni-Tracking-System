@@ -1,4 +1,12 @@
-
+<?php 
+if((!$this->session->userdata('logged_in'))){
+    show_404();
+}
+?>
+<?php
+if($this->session->userdata('user_type') === 'alumni' || $this->session->userdata('superadmin'))
+    show_404();
+?>
 
 <br><br>
 <?php echo form_open_multipart('ern_no/create');?>

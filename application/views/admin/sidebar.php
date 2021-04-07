@@ -4,8 +4,9 @@ if((!$this->session->userdata('logged_in'))){
 }
 ?>
 <?php
-if($this->session->userdata('user_type') === 'alumni' || $this->session->userdata('superadmin'))
+if($this->session->userdata('user_type') === 'alumni' || $this->session->userdata('user_type') ==='superadmin'){
     show_404();
+}
 ?>
 <!DOCTYPE html>
 <html>

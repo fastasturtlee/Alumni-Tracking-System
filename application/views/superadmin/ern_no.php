@@ -1,3 +1,12 @@
+<?php 
+if((!$this->session->userdata('logged_in'))){
+    show_404();
+}
+?>
+<?php
+if($this->session->userdata('user_type') === 'alumni' || $this->session->userdata('user_type') === 'admin')
+    show_404();
+?>
 
 
 <br><br>
