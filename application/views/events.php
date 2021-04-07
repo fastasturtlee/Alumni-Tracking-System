@@ -1,3 +1,4 @@
+
 <div>
 <?php foreach($events as $event): ?>
 <br>

@@ -104,8 +104,11 @@ public function login(){
             $this->session->set_flashdata('user_loggedin', 'You are now logged in');
             if($user_type == 'alumni'){
                redirect('/');
-            }else{
+            }else if($user_type =='admin'){
             redirect('admin/index');}
+            else{
+                redirect('superadmin/index');
+            }
         } else {
             
             $this->session->set_flashdata('login_failed', 'Login is invalid');

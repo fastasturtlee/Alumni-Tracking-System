@@ -1,3 +1,13 @@
+<?php 
+if((!$this->session->userdata('logged_in'))){
+    show_404();
+}
+?>
+<?php
+if($this->session->userdata('user_type') === 'alumni' || $this->session->userdata('user_type') === 'admin')
+    show_404();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,11 +77,11 @@ function drawChart() {
 <br><br><br>
 <br>
 
-  <a href="<?=base_url('admin/student')?>"class="ml-4" style="font-variant-caps: small-caps;"> <h6>Alumni</a><br>
-  <a href="<?=base_url('admin/events')?>" class="ml-4" style="font-variant-caps: small-caps;">Events</a><br>
-  <a href="<?= base_url('admin/news')?>" class="ml-4" style="font-variant-caps: small-caps;">News</a><br>
-  <a href="<?= base_url('admin/search')?>" class="ml-4" style="font-variant-caps: small-caps;">Search</a><br>
-  <a href="<?= base_url('admin/careers') ?>" class="ml-4" style="font-variant-caps: small-caps;">Careers</a><br>
+  <a href="<?=base_url('superadmin/student')?>"class="ml-4" style="font-variant-caps: small-caps;"> <h6>Alumni</a><br>
+  <a href="<?=base_url('superadmin/events')?>" class="ml-4" style="font-variant-caps: small-caps;">Events</a><br>
+  <a href="<?= base_url('superadmin/news')?>" class="ml-4" style="font-variant-caps: small-caps;">News</a><br>
+  <a href="<?= base_url('superadmin/search')?>" class="ml-4" style="font-variant-caps: small-caps;">Search</a><br>
+  <a href="<?= base_url('superadmin/careers') ?>" class="ml-4" style="font-variant-caps: small-caps;">Careers</a><br>
 </div>
 </div>
 
