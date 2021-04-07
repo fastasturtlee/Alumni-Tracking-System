@@ -21,31 +21,31 @@ if($user['userid'] != $this->session->userdata('user_id') ){
   </center>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">Username</label>
-  <input type="text" name="username" class="form-control" placeholder="Username" value="<?= $user['username']; ?>" id="inputDefault">
+  <label class="form-control"><?=$user['username'];?></label>
 </div>
     <div class="form-group">
   <label class="col-form-label" for="inputDefault">Full Name</label>
-  <input type="text" name="fullname" class="form-control" placeholder="Full Name" value="<?= $user['full_name']; ?>" id="inputDefault">
+  <label class="form-control"><?=$user['full_name'];?></label>
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Mobile Number</label>
-  <input type="text" class="form-control" value="<?= $user['mobileno']; ?>" name="mobileno" id="inputDefault">
+  <label class="form-control"><?=$user['mobileno'];?></label>
 </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $user['emailid']; ?>">    </div>
+      <label class="form-control"><?=$user['emailid'];?></label>    </div>
     <h3>Degree Information</h3>
     <div class="form-group">
   <label class="col-form-label" for="inputDefault">ERN No</label>
-  <input type="text" name="ern_no" class="form-control" value="<?= $user['ern_no']; ?>" id="inputDefault">
+  <label class="form-control"><?=$user['ern_no'];?></label>
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Degree</label>
-  <input type="text" name="degree" class="form-control" value="<?= $user['degree']; ?>" id="inputDefault">
+  <label class="form-control"><?=$user['degree'];?></label>
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Branch</label>
-  <input type="text" name="branch" class="form-control" value="<?= $user['branch']; ?>" id="inputDefault">
+  <label class="form-control"><?=$user['branch'];?></label>
 </div>
 <div class="form-group">
 <label class="col-form-label" for="inputDefault">Year of Passout</label>

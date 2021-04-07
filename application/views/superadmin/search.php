@@ -7,7 +7,6 @@ if((!$this->session->userdata('logged_in'))){
 if($this->session->userdata('user_type') === 'alumni'|| 'super admin')
     show_404();
 ?>
-
 <h3 class="text-center display-4 pt-2">Search</h3><hr>
 <?= form_open('search/result'); ?>
 <div class="row mt-4">
