@@ -2,10 +2,7 @@
 
 class Careers extends CI_Controller{
     public function create(){
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/header');
         $this->load->view('careers/create_career');
-        $this->load->view('admin/footer');
         
     }
 
@@ -30,8 +27,6 @@ class Careers extends CI_Controller{
 
     public function edit($career_id){
         $data['career'] = $this->career_model->getCareer($career_id);
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/header');
         $this->load->view('careers/view',$data);
     }
 

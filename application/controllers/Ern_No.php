@@ -13,10 +13,7 @@ class Ern_No extends CI_Controller{
         {
             $data['ern_nos'] = $this->ern_no_model->getErn();
                 $data['error'] = array('error' => $this->upload->display_errors());
-                $this->load->view('admin/sidebar');
-                $this->load->view('admin/header');
-                $this->load->view('admin/ern_no',$data);
-                $this->load->view('admin/footer');
+                $this->load->view('ern_no/ern_no',$data);
         }
         else
         {
@@ -37,10 +34,7 @@ class Ern_No extends CI_Controller{
                         }               
                 $data['ern_nos'] = $this->ern_no_model->getErn();
                 unlink($file_path);
-                $this->load->view('admin/sidebar');
-                $this->load->view('admin/header');
-                $this->load->view('admin/ern_no',$data);
-                $this->load->view('admin/footer');
+                $this->load->view('ern_no/ern_no',$data);
         }
 }
     }

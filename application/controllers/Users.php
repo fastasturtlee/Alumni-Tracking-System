@@ -106,7 +106,7 @@ public function login(){
                redirect('/');
             }else if($user_type =='admin'){
             redirect('admin/index');}
-            else{
+            else if($user_type == 'superadmin'){
                 redirect('superadmin/index');
             }
         } else {
@@ -125,7 +125,6 @@ public function login(){
             $this->session->unset_userdata('user_type');
             redirect('login');
         }
-
         public function edit($userid){
             $data['user'] = $this->user_model->getUser($userid);
             $this->load->view('students/view',$data);

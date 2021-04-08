@@ -2,7 +2,6 @@
 class Events extends CI_Controller{
      
     public function create(){
-        $this->load->view('admin/sidebar');
         $this->load->view('events/create_event');
     }
 

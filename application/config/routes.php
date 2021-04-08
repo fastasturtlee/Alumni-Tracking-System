@@ -63,3 +63,6 @@ $route['profile/(:any)'] = 'alumni/profile/$1';
 $route['waiting'] = 'alumni/waiting';
 $route['chirp'] = 'alumni/chirp';
 
+
+$route['users/edit/(:any)'] = 'users/edit/$1';
+

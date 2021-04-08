@@ -2,10 +2,7 @@
 
 class News extends CI_Controller{
     public function create(){
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/header');
         $this->load->view('news/create_news');
-        $this->load->view('admin/footer');
 
     }
 
@@ -14,10 +11,7 @@ class News extends CI_Controller{
         $this->form_validation->set_rules('body','Body','required');
 
         if($this->form_validation->run()===FALSE){
-            $this->load->view('admin/sidebar');
-            $this->load->view('admin/header');
             $this->load->view('news/create_news');
-            $this->load->view('admin/footer');
         }else{
             $this->news_model->add();
             redirect('admin/news');

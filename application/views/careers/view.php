@@ -1,4 +1,13 @@
 <?php echo validation_errors();?>
+<?php
+if($this->session->userdata('user_type') =='admin'){
+  $this->load->view('admin/sidebar');
+  $this->load->view('admin/header');  
+}elseif($this->session->userdata('user_type') == 'superadmin'){
+  $this->load->view('superadmin/sidebar');
+  $this->load->view('superadmin/header');
+}
+?>
 <?php echo form_open('careers/update') ?>
 <h3>update Job Details</h3><br>
 <div>
@@ -93,3 +102,11 @@
 	<br><input type="submit" class="btn btn-primary"><br><br>
 
     <?php echo form_close(); ?>
+
+	<?php
+if($this->session->userdata('user_type') =='admin'){
+  $this->load->view('admin/footer'); 
+}elseif($this->session->userdata('user_type') == 'superadmin'){
+  $this->load->view('superadmin/footer');
+}
+?>

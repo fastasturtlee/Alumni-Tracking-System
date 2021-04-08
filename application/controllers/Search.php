@@ -12,10 +12,7 @@ class Search extends CI_Controller{
         }else{
             $name = $this->input->post('search_bar');
             $data['infos'] = $this->search_model->getResult($name);
-            $this->load->view('admin/sidebar');
-            $this->load->view('admin/header');
             $this->load->view('search/view',$data);
-            $this->load->view('admin/footer');
         }
     }
 }
