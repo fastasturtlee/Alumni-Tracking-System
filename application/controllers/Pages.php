@@ -45,4 +45,12 @@ class Pages extends CI_Controller{
         $this->load->view('login');
         $this->load->view('footer');
     }
+
+    public function certificate($userid){
+        $data['userid'] = $userid;
+        $data['user'] = $this->user_model->getUser($userid);
+        $this->load->view('header');
+        $this->load->view('certificate',$data);
+        $this->load->view('footer');
+    }
 }

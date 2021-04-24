@@ -101,7 +101,6 @@ public function login(){
             );
 
             $this->session->set_userdata($user_data);
-            $this->session->set_flashdata('user_loggedin', 'You are now logged in');
             if($user_type == 'alumni'){
                redirect('/');
             }else if($user_type =='admin'){
@@ -185,5 +184,32 @@ public function login(){
            }
         }
 
+        public function certificate(){
+            $userid = $this->input->post('userid');
+            $config['upload_path']          = './uploads/cert/';
+            $config['allowed_types']        = 'jpg|png|jpeg';
+            $config['max_size']             = 2000;
+            $config['encrypt_name']         = TRUE;
+            $this->load->library('upload', $config);
+            $user = $this->user_model->getUser($userid);
+            if ($this->upload->do_upload('cert'))
+            {
+                if($user['certificate'] && file_exists('uploads/cert/'.$user['certificate'])){
+                    $filepath = 'uploads/cert/'.$user['profile_pic'];
+                    unlink($filepath);
+                }
+                $uploadedData = $this->upload->data();
+                $filename = $uploadedData['file_name'];
+                $this->user_model->updateCert($userid,$filename);
+                redirect('certificate'.$userid);
+                   
+            }
+            else
+            {
+                $filename = $user['certificate'];
+                $this->user_model->updateCert($userid,$filename);               
+                redirect('certificate'.$userid);               
+            }
+        }
         
 }

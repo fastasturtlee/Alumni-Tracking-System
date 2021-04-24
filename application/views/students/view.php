@@ -1,3 +1,8 @@
+<?php 
+if($this->session->userdata("user_type") == 'alumni'||!$this->session->userdata("logged_in")){
+  show_404();
+}
+?>
 <?php
 if($this->session->userdata('user_type') =='admin'){
   $this->load->view('admin/sidebar');
@@ -68,6 +73,10 @@ $options = array(
 $attribute = 'class="col-form-label custom-select"';
 echo form_dropdown('passyear',$options,$user['passout_year'],$attribute);
 ?>
+<div class="form-group">
+<label class="col-form-label" for="inputDefault" style="font-size: 15px;">View Achievements during College</label>
+<button type="button" class="btn btn-primary btn-sm" style="margin-left: 20px;" onclick="location.href='<?php echo base_url().'certificate/index/'.$user['userid']?>'">View</button>
+</div>
 </div>
 <h3>Professional details </h3>
 <label class="col-form-label" for="inputDefault">Proffession</label>
@@ -118,8 +127,9 @@ if($this->session->userdata('user_type') === 'superadmin'){
   $attribute = 'class="col-form-label custom-select"';
   echo form_dropdown('usertype',$options,$user['user_type'],$attribute);
 
+}else{
+  echo '<input type="hidden" name="usertype" value="'.$user['user_type'].'">';
 }
-  echo '<input type="hidden" name="currentuser" value="'.$this->session->userdata('user_type').'">';
 ?>
   </fieldset>
   <center>

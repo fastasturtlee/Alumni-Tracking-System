@@ -53,4 +53,12 @@ class SuperAdmin extends CI_Controller{
         $this->load->view('superadmin/careers',$data);
         $this->load->view('superadmin/footer'); 
     }
+
+    public function certificate($userid){
+        $data['user'] = $this->user_model->getUser($userid);
+        $this->load->view('superadmin/sidebar');
+        $this->load->view('superadmin/header');
+        $this->load->view('superadmin/certificate',$data);
+        $this->load->view('superadmin/footer'); 
+    }
 }

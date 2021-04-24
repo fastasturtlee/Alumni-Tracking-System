@@ -55,6 +55,7 @@ $route['events'] = 'pages/events';
 $route['register'] = 'pages/register';
 $route['careers'] = 'pages/careers';
 $route['login'] = 'pages/login';
+$route['certificate/(:any)'] = 'pages/certificate/$1';
 $route['logout'] = 'users/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
@@ -65,4 +66,5 @@ $route['chirp'] = 'alumni/chirp';
 
 
 $route['users/edit/(:any)'] = 'users/edit/$1';
+$route['admin/certificate/(:any)']  = 'admin/certificate/$1';
 

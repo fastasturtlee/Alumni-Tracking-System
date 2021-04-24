@@ -4,7 +4,7 @@ if($user['userid'] != $this->session->userdata('user_id') ){
 }
 ?>
 
-<?php echo form_open_multipart('users/update'); ?>
+<?php echo form_open_multipart('alumni/update'); ?>
 <fieldset>
   <legend>Update User Profile</legend>
   <div>
@@ -65,6 +65,10 @@ $attribute = 'class="col-form-label custom-select"';
 echo form_dropdown('passyear',$options,$user['passout_year'],$attribute);
 ?>
 </div>
+<div class="form-group">
+<label class="col-form-label" for="inputDefault" style="font-size: 15px;">View Achievements during College</label>
+<button type="button" class="btn btn-primary btn-sm" style="margin-left: 20px;" onclick="location.href='<?php echo base_url().'certificate/'.$this->session->userdata('user_id')?>'">View</button>
+</div>
 <h3>Professional details </h3>
 <label class="col-form-label" for="inputDefault">Proffession</label>
 <?php
@@ -102,6 +106,8 @@ $options = array(
 $attribute = 'class="col-form-label custom-select"';
 echo form_dropdown('income',$options,$user['proffession'],$attribute);
  ?>
+ <div>
+ </div>
   </fieldset>
   <center>
   <button type="submit" class="btn btn-primary ">Update</button>

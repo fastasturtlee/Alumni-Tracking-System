@@ -107,6 +107,19 @@ class User_model extends CI_Model{
 
     }
 
+    public function updateCert($userid,$filename){
+        $data = array(
+            'certificate' => $filename,
+            'clubname' => $this->input->post('clubname')
+        );
+        
+
+                
+        $this->db->where('userid',$userid);
+        return $this->db->update('users',$data);
+
+    }
+
 
     public function verify($userid){
         $data = array(

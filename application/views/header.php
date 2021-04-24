@@ -9,7 +9,8 @@ if($this->session->userdata('user_type') === 'alumni' && $this->session->userdat
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Alumni Tracking System</title>
 <link type="text/css" rel="stylesheet" href="<?= base_url('assets\css\bootstrap.css')?>" />
 <link type="text/css" rel="stylesheet" href="<?=base_url('assets\css\syle.css')?>" />

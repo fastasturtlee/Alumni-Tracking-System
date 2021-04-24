@@ -12,6 +12,7 @@ if($this->session->userdata('user_type') === 'alumni' || $this->session->userdat
 <html>
 <head>
 <title>Alumni Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link type="text/css" rel="stylesheet" href="<?= base_url('assets\css\bootstrap.css')?>" />
 <script src="<?= base_url("assets\js\jquery-3.5.1.min.js")?>"></script>
 <script src="<?= base_url('assets\js\bootstrap.min.js')?>"></script>
