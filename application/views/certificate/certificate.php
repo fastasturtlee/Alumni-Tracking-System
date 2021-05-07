@@ -5,6 +5,9 @@ if($this->session->userdata('user_type') == 'superadmin'){
 }else if($this->session->userdata('user_type') == 'admin'){
   $this->load->view('admin/sidebar');
   $this->load->view('admin/header');
+}else if($this->session->userdata('user_type') == 'alumni'){
+  $this->load->view('header');
+
 }else{
   show_404();
 }
@@ -48,7 +51,11 @@ if($this->session->userdata('user_type') == 'superadmin'){
   $this->load->view('superadmin/footer');
 }else if($this->session->userdata('user_type') == 'admin'){
   $this->load->view('admin/footer');
-}else{
+}else if($this->session->userdata('user_type') == 'alumni'){
+  $this->load->view('footer');
+
+}
+else{
   show_404();
 }
 ?>

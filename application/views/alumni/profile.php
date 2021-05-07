@@ -68,7 +68,7 @@ echo form_dropdown('passyear',$options,$user['passout_year'],$attribute);
 </div>
 <div class="form-group">
 <label class="col-form-label" for="inputDefault" style="font-size: 15px;">View Achievements during College</label>
-<button type="button" class="btn btn-primary btn-sm" style="margin-left: 20px;" onclick="location.href='<?php echo base_url().'certificate/index'.$this->session->userdata('user_id')?>'">View</button>
+<button type="button" class="btn btn-primary btn-sm" style="margin-left: 20px;" onclick="location.href='<?php echo base_url().'certificate/index/'.$this->session->userdata('user_id')?>'">View</button>
 </div>
 <h3>Professional details </h3>
 <label class="col-form-label" for="inputDefault">Proffession</label>
