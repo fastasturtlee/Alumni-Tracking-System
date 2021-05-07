@@ -104,35 +104,45 @@ echo form_dropdown('day',$options,$event['day'],$attribute);
 		</div>
 		<div class="col-sm-4">
 			<div class="form-group">
-				<label for="month"><span style="color:red;">* </span>Month</label>
-				<select class="form-control month" name="month" id="month">
-					<option>Select Month</option>
-					<option value="january">January</option>
-					<option value="february">February</option>
-					<option value="march">March</option>
-					<option value="april">April</option>
-					<option value="may">May</option>
-					<option value="june">June</option>
-					<option value="july">July</option>
-					<option value="august">August</option>
-					<option value="september">September</option>
-					<option value="october">October</option>
-					<option value="november">November</option>
-					<option value="december">December</option>
-				</select>
+			<label for="month"><span style="color:red;">* </span>Month</label>
+<?php 
+$options = array(
+  '' => 'select month',
+  'January' => 'January',
+  'February' => 'February',
+  'March' => 'March',
+  'April' => 'April',
+  'May' => 'May',
+  'June' => 'June',
+  'July' => 'July',
+  'August' => 'August',
+  'September' => 'September',
+  'October' => 'October',
+  'November' => 'November',
+  'December' => 'December'
+);
+$attribute = 'class="col-form-label custom-select"';
+echo form_dropdown('month',$options,$event['month'],$attribute);
+?>
 				<div class="invalid-feedback city"></div>
 			</div>
+			
 		</div>
 		<div class="col-sm-4">
 			<div class="form-group">
 				<label for="year"><span style="color:red;">* </span>Year</label>
-				<select class="form-control year" name="year" id="year">
-					<option>Select Year</option>
-					<option value="2020">2020</option>
-					<option value="2021">2021</option>
-					<option value="2022">2022</option>
-					<option value="2023">2023</option>
-				</select>
+				<?php 
+$options = array(
+  '' => 'select Year',
+  '2020' => '2020',
+  '2021' => '2021',
+  '2022' => '2022',
+  '2023' => '2023',
+  '2024' => '2024'
+);
+$attribute = 'class="col-form-label custom-select"';
+echo form_dropdown('year',$options,$event['year'],$attribute);
+?>
 				<div class="invalid-feedback year"></div>
 			</div>
 		</div>
