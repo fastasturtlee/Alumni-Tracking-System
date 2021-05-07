@@ -13,6 +13,7 @@ if($this->session->userdata('user_type') =='admin'){
 		<div class="col-sm-12">
 		<div>
   			<input type="hidden" name="news_id" value="<?= $new['news_id'];?>">
+			<input type="hidden" name="currentuser" value="<?= $this->session->userdata('user_type');?>">
  	 	</div>
 			<div class="form-group">
 				<label for="title">Title</label>

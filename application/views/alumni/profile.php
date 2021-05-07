@@ -9,6 +9,7 @@ if($user['userid'] != $this->session->userdata('user_id') ){
   <legend>Update User Profile</legend>
   <div>
   <input type="hidden" name="userid" value="<?= $user['userid'];?>">
+  <input type="hidden" name="currentuser" value="<?= $user['user_type'];?>">
   </div>
   <center>
   <div>

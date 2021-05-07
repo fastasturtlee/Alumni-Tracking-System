@@ -11,7 +11,8 @@ if($this->session->userdata('user_type') =='admin'){
 <?php echo form_open('careers/update') ?>
 <h3>update Job Details</h3><br>
 <div>
-  <input type="hidden" name="career_id" value="<?= $career['career_id'];?>"
+  <input type="hidden" name="career_id" value="<?= $career['career_id'];?>">
+  <input type="hidden" name="currentuser" value="<?= $this->session->userdata('user_type');?>">
   </div>
 <div class="row">
 <div class="col-sm-12">

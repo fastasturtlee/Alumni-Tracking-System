@@ -39,7 +39,8 @@ class News extends CI_Controller{
 
     public function update(){
         $this->news_model->update();
-        redirect('admin/news');    
+        $currentuser = $this->input->post('currentuser');
+        redirect($currentuser.'/news');    
         
     }
     public function delete($news_id){

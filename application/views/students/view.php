@@ -18,6 +18,7 @@ if($this->session->userdata('user_type') =='admin'){
   <legend>Update User Profile</legend>
   <div>
   <input type="hidden" name="userid" value="<?= $user['userid'];?>">
+  <input type="hidden" name="currentuser" value="<?= $this->session->userdata('user_type');?>">
   </div>
   <center>
   <div>

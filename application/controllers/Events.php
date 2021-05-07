@@ -44,7 +44,9 @@ class Events extends CI_Controller{
 
     public function update(){
         $this->event_model->update();
-        redirect('admin/events');
+        $currentuser = $this->input->post('currentuser');
+        redirect($currentuser.'/events');
+        
     }
 
     public function delete($event_id){

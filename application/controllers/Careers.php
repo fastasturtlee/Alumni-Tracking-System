@@ -32,8 +32,8 @@ class Careers extends CI_Controller{
 
     public function update(){
         $this->career_model->update();
-
-        redirect('admin/careers');
+        $currentuser = $this->input->post('currentuser');
+        redirect($currentuser.'/careers');
     }
 
     public function unpublish($career_id){

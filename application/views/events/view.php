@@ -11,7 +11,8 @@ if($this->session->userdata('user_type') =='admin'){
 <?php echo form_open('events/update') ?>
 <h3>Update Event Details</h3><br>
 <div>
-  <input type="hidden" name="event_id" value="<?= $event['event_id'];?>"
+  <input type="hidden" name="event_id" value="<?= $event['event_id'];?>">
+  <input type="hidden" name="currentuser" value="<?= $this->session->userdata('user_type');?>">
   </div>
 <div class="row">
 <div class="col-sm-12">
