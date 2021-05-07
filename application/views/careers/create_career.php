@@ -13,6 +13,7 @@ if($this->session->userdata('user_type') =='admin'){
 <div class="row">
 <div class="col-sm-12">
 			<div class="form-group">
+			<input type="hidden" name="currentuser" value="<?= $this->session->userdata('user_type');?>">
 				<label for="title"><span style="color:red;">* </span>Job Title</label>
 				<input type="text" class="form-control title" name="title" id="title" placeholder="Job Title">
 				<div class="invalid-feedback title"></div>

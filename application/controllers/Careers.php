@@ -13,6 +13,7 @@ class Careers extends CI_Controller{
         $this->form_validation->set_rules('location','Location','required');
         $this->form_validation->set_rules('work_type','Work Type','required');
 
+        $currentuser = $this->input->post('currentuser');
         if($this->form_validation->run() === FALSE){
             $this->load->view('admin/sidebar');
             $this->load->view('admin/header');
@@ -20,7 +21,7 @@ class Careers extends CI_Controller{
             $this->load->view('admin/footer');
         }else{
             $this->career_model->add();
-            redirect('admin/careers');
+            redirect($currentuser.'/careers');
         }
     }
 
