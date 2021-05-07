@@ -1,6 +1,7 @@
 
 <div>
 <?php foreach($events as $event): ?>
+<?php if($event->ispublish == TRUE): ?>
 <br>
 <center>
 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 50rem;">
@@ -14,6 +15,7 @@
     <p class="card-text"><?='<b>Organizer Name : </b>'.$event->organizer_name.'<b> Organizer Number :</b> '.$event->organizer_contact?></p><hr>
     <a href="#" class="btn btn-primary">View More</a>
   </div>
+  <?php endif;?>
 </div>
 </center>
 <?php endforeach ?>

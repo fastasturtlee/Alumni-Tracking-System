@@ -1,6 +1,7 @@
 
 <div>
 <?php foreach($news as $new): ?>
+  <?php if($new->ispublish == TRUE): ?>
 <br>
 <center>
 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 50rem;">
@@ -12,6 +13,7 @@
   </div>
 </div>
 </center>
+<?php endif; ?>
 <?php endforeach ?>
 
 </div>

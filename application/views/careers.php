@@ -1,5 +1,6 @@
 <div>
 <?php foreach($careers as $career): ?>
+  <?php if($career->ispublish == TRUE): ?>
 <br>
 <center>
 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 50rem;">
@@ -31,6 +32,7 @@
     <a href="#" class="btn btn-primary">View More</a>
   </div>
 </div>
+<?php endif; ?>
 </center>
 <?php endforeach ?>
 
