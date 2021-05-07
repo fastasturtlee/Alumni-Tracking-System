@@ -1,8 +1,18 @@
-
+<?php
+if($this->session->userdata('user_type') == 'superadmin'){
+  $this->load->view('superadmin/sidebar');
+  $this->load->view('superadmin/header');
+}else if($this->session->userdata('user_type') == 'admin'){
+  $this->load->view('admin/sidebar');
+  $this->load->view('admin/header');
+}else{
+  show_404();
+}
+?>
 
 <div>
 <?php echo form_open_multipart('users/certificate');?>
-<input type="hidden" value="<?php echo $userid;?>" name="userid">
+<input type="hidden" value="<?php echo $user['userid']?>" name="userid">
 <div class="container" style="margin-top: 10px;">
 <div class="row">
 <div class="col-sm-4">
@@ -31,3 +41,14 @@
   </tbody>
 </table>
 </div>
+
+<?php
+
+if($this->session->userdata('user_type') == 'superadmin'){
+  $this->load->view('superadmin/footer');
+}else if($this->session->userdata('user_type') == 'admin'){
+  $this->load->view('admin/footer');
+}else{
+  show_404();
+}
+?>
