@@ -1,4 +1,9 @@
 <?php echo validation_errors() ?>
+<?Php
+if($this->session->userdata('logged_in')){
+  show_404();
+}
+?>
 <?php echo form_open_multipart('users/register') ?>
   <fieldset>
   <legend>Register Yourself</legend>
@@ -54,6 +59,7 @@
       <option value="2023">2023</option>
     </select>
   </div>
+  <label class="col-form-label" for="inputDefault">Upload Pictures</label>
   <div class='row'>
     <div class='col-3'>
 <input type="file" name="img_profile" size="20" />

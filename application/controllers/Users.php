@@ -95,7 +95,7 @@ public function login(){
             $user_data = array(
                 'user_id' => $user_id,
                 'email_id' => $email,
-                'logged_in' => true,
+                'logged_in' => TRUE,
                 'user_type' => $user_type,
                 'is_verified' => $is_verified
             );
@@ -162,17 +162,17 @@ public function login(){
 
         public function verify($userid){
             $this->user_model->verify($userid);
-            redirect('admin/student');
+            redirect(base_url($this->session->userdata('user_type')).'/student');
         }
 
         public function unverify($userid){
             $this->user_model->unverify($userid);
-            redirect('admin/student');
+            redirect(base_url($this->session->userdata('user_type')).'/student');
         }
 
         public function delete($userid){
             $this->user_model->delete($userid);
-            redirect('admin/student');
+            redirect(base_url($this->session->userdata('user_type')).'/student');
         }
 
         public function check_ern_no_valid($ernno){

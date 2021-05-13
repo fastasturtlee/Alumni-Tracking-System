@@ -1,5 +1,9 @@
 <?php echo validation_errors() ?>
-
+<?Php
+if($this->session->userdata('logged_in')){
+  show_404();
+}
+?>
 <?php echo form_open('users/login') ?>
   <fieldset>
   <legend>Login Yourself</legend>

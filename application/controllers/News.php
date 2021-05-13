@@ -14,7 +14,7 @@ class News extends CI_Controller{
             $this->load->view('news/create_news');
         }else{
             $this->news_model->add();
-            redirect('admin/news');
+            redirect(base_url($this->session->userdata('user_type')).'/news');
         }
 
     }
@@ -28,23 +28,23 @@ class News extends CI_Controller{
     public function unpublish($news_id){
 
         $this->news_model->unpublish($news_id);
-        redirect('admin/news');
+        redirect(base_url($this->session->userdata('user_type')).'/news');
     }
 
     public function publish($news_id){
 
         $this->news_model->publish($news_id);
-        redirect('admin/news');
+        redirect(base_url($this->session->userdata('user_type')).'/news');
     }
 
     public function update(){
         $this->news_model->update();
         $currentuser = $this->input->post('currentuser');
-        redirect($currentuser.'/news');    
+        redirect(base_url($this->session->userdata('user_type')).'/news');
         
     }
     public function delete($news_id){
         $this->news_model->delete($news_id);
-        redirect('admin/events');
+        redirect(base_url($this->session->userdata('user_type')).'/news');
     }
 }

@@ -20,7 +20,7 @@ class Events extends CI_Controller{
             $this->load->view('create_event');
         }else{
             $this->event_model->add();
-            redirect('admin/events');
+            redirect(base_url($this->session->userdata('user_type')).'/events');
         }
     }
 
@@ -33,13 +33,13 @@ class Events extends CI_Controller{
     public function unpublish($event_id){
 
         $this->event_model->unpublish($event_id);
-        redirect('admin/events');
+        redirect(base_url($this->session->userdata('user_type')).'/events');
     }
 
     public function publish($event_id){
 
         $this->event_model->publish($event_id);
-        redirect('admin/events');
+        redirect(base_url($this->session->userdata('user_type')).'/events');
     }
 
     public function update(){
@@ -51,6 +51,6 @@ class Events extends CI_Controller{
 
     public function delete($event_id){
         $this->event_model->delete($event_id);
-        redirect('admin/events');
+        redirect(base_url($this->session->userdata('user_type')).'/events');
     }
 }

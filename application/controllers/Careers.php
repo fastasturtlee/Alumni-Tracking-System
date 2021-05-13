@@ -34,23 +34,23 @@ class Careers extends CI_Controller{
     public function update(){
         $this->career_model->update();
         $currentuser = $this->input->post('currentuser');
-        redirect($currentuser.'/careers');
+        redirect(base_url($this->session->userdata('user_type')).'/careers');
     }
 
     public function unpublish($career_id){
 
         $this->career_model->unpublish($career_id);
-        redirect('admin/careers');
+        redirect(base_url($this->session->userdata('user_type')).'/careers');
     }
 
     public function publish($career_id){
 
         $this->career_model->publish($career_id);
-        redirect('admin/careers');
+        redirect(base_url($this->session->userdata('user_type')).'/careers');
     }
 
     public function delete($career_id){
         $this->career_model->delete($career_id);
-        redirect('admin/careers');
+        redirect(base_url($this->session->userdata('user_type')).'/careers');
     }
 }
