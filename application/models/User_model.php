@@ -92,7 +92,7 @@ class User_model extends CI_Model{
             'ern_no'=> $this->input->post('ern_no'),
             'degree'=>$this->input->post('degree'),
             'branch'=>$this->input->post('branch'),
-            'passout_year'=>$this->input->post('passout_year'),
+            'passout_year'=>$this->input->post('passyear'),
             'proffession'=>$this->input->post('proffession'),
             'company_name'=>$this->input->post('company_name'),
             'income'=>$this->input->post('income'),
