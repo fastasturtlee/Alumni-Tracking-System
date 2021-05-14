@@ -40,14 +40,14 @@ class Alumni extends CI_Controller{
             $uploadedData = $this->upload->data();
             $filename = $uploadedData['file_name'];
             $this->user_model->updateUser($userid,$filename);
-            redirect($currentuser.'/student');
+            redirect('');
                
         }
         else
         {
             $filename = $user['profile_pic'];
             $this->user_model->updateUser($userid,$filename);               
-            redirect($currentuser.'/student');               
+            redirect('');               
         }
 
         if ($this->upload->do_upload('certupload'))
@@ -59,7 +59,7 @@ class Alumni extends CI_Controller{
             $uploadedData = $this->upload->data();
             $certename = $uploadedData['file_name'];
             $this->user_model->updateUser($userid,$certename);
-            redirect($currentuser.'/student');
+            redirect('');
                
         }
         else
