@@ -33,7 +33,7 @@
 <?php 
 $news_row = $this->news_model->getNumRow();
 for($i =0;$news_row>=4?$i<4:$i<$news_row;$i++): ?>
-<?php if($event->ispublish == TRUE): ?>
+<?php if($news[$i]->ispublish == TRUE): ?>
 <br>
 <div class="card shadow col-lg-5 mb-4 mr-5 ml-4" style="width: 25rem;">
 <small style="text-align : right;"><?=$news[$i]->date?> </small>
@@ -57,7 +57,7 @@ for($i =0;$news_row>=4?$i<4:$i<$news_row;$i++): ?>
 $events_row = $this->event_model->getNumRow();
 
 for($i=0;$events_row>=4?$i<4:$i<$events_row;$i++): ?>
-<?php if($event->ispublish == TRUE): ?>
+<?php if($events[$i]->ispublish == TRUE): ?>
 <br>
 <div class="card shadow col-lg-5 mb-4 mr-5 ml-4" style="width: 100rem;">
 <small style="text-align : right;"><?=$events[$i]->date_posted?> </small>
@@ -85,7 +85,7 @@ for($i=0;$events_row>=4?$i<4:$i<$events_row;$i++): ?>
 <?php
 $job_row = $this->career_model->getNumRow();
  for($i = 0 ;$job_row>=4?$i<4:$i<$job_row;$i++): ?>
-  <?php if($career->ispublish == TRUE): ?>
+  <?php if($careers[$i]->ispublish == TRUE): ?>
 <br>
 <div class="card shadow col-lg-5 mb-4 mr-5 ml-4" style="width: 50rem;">
 <small style="text-align : right;"><?=$careers[$i]->date?> </small>
