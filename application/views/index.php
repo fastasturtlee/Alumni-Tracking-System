@@ -33,6 +33,7 @@
 <?php 
 $news_row = $this->news_model->getNumRow();
 for($i =0;$news_row>=4?$i<4:$i<$news_row;$i++): ?>
+<?php if($event->ispublish == TRUE): ?>
 <br>
 <div class="card shadow col-lg-5 mb-4 mr-5 ml-4" style="width: 25rem;">
 <small style="text-align : right;"><?=$news[$i]->date?> </small>
@@ -42,6 +43,7 @@ for($i =0;$news_row>=4?$i<4:$i<$news_row;$i++): ?>
     <a href="<?=base_url()?>news" class="btn btn-primary">View More</a>
   </div>
 </div>
+<?php endif;?>
 <?php endfor ?>
   </div>
 
@@ -55,6 +57,7 @@ for($i =0;$news_row>=4?$i<4:$i<$news_row;$i++): ?>
 $events_row = $this->event_model->getNumRow();
 
 for($i=0;$events_row>=4?$i<4:$i<$events_row;$i++): ?>
+<?php if($event->ispublish == TRUE): ?>
 <br>
 <div class="card shadow col-lg-5 mb-4 mr-5 ml-4" style="width: 100rem;">
 <small style="text-align : right;"><?=$events[$i]->date_posted?> </small>
@@ -68,11 +71,12 @@ for($i=0;$events_row>=4?$i<4:$i<$events_row;$i++): ?>
     <a href="<?php base_url()?>events" class="btn btn-primary">View More</a>
   </div>
 </div>
+<?php endif;?>
 <?php endfor ?>
 
 </div>
 <hr style="height:1px;border-width:0px;color:#d9230f;background-color:#d9230f">
-<h1>Jobs Posting </h1>
+<h1>Careers </h1>
 <hr style="height:1px;border-width:0px;color:#d9230f;background-color:#d9230f">
 
 <br>
@@ -81,6 +85,7 @@ for($i=0;$events_row>=4?$i<4:$i<$events_row;$i++): ?>
 <?php
 $job_row = $this->career_model->getNumRow();
  for($i = 0 ;$job_row>=4?$i<4:$i<$job_row;$i++): ?>
+  <?php if($career->ispublish == TRUE): ?>
 <br>
 <div class="card shadow col-lg-5 mb-4 mr-5 ml-4" style="width: 50rem;">
 <small style="text-align : right;"><?=$careers[$i]->date?> </small>
@@ -111,6 +116,7 @@ $job_row = $this->career_model->getNumRow();
     <a href="<?=base_url()?>careers" class="btn btn-primary">View More</a>
   </div>
 </div>
+<?php endif; ?>
 <?php endfor; ?>
 </div>
 </div>

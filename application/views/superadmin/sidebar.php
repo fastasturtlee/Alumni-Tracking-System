@@ -77,7 +77,7 @@ function drawChart() {
 <div >
 <br><br><br>
 <br>
-
+  <a href="<?=base_url('superadmin/index')?>"class="ml-4" style="font-variant-caps: small-caps;"> <h6>Index</a><br>
   <a href="<?=base_url('superadmin/student')?>"class="ml-4" style="font-variant-caps: small-caps;"> <h6>Alumni</a><br>
   <a href="<?=base_url('superadmin/events')?>" class="ml-4" style="font-variant-caps: small-caps;">Events</a><br>
   <a href="<?= base_url('superadmin/news')?>" class="ml-4" style="font-variant-caps: small-caps;">News</a><br>

@@ -78,6 +78,7 @@ function drawChart() {
 <br><br><br>
 <br>
 
+  <a href="<?=base_url('admin/index')?>"class="ml-4" style="font-variant-caps: small-caps;"> <h6>Index</a><br>
   <a href="<?=base_url('admin/student')?>"class="ml-4" style="font-variant-caps: small-caps;"> <h6>Alumni</a><br>
   <a href="<?=base_url('admin/events')?>" class="ml-4" style="font-variant-caps: small-caps;">Events</a><br>
   <a href="<?= base_url('admin/news')?>" class="ml-4" style="font-variant-caps: small-caps;">News</a><br>
