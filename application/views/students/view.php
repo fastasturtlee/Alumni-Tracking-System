@@ -115,7 +115,7 @@ $options = array(
 );
 $attribute = 'class="col-form-label custom-select"';
 echo form_dropdown('income',$options,$user['proffession'],$attribute);
- ?>
+//  ?>
 <?php 
 if($this->session->userdata('user_type') === 'superadmin'){
   echo '<br><label class="col-form-label" for="inputDefault">Change User Type</label>';

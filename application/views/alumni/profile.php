@@ -26,7 +26,7 @@ if($user['userid'] != $this->session->userdata('user_id') ){
 </div>
     <div class="form-group">
   <label class="col-form-label" for="inputDefault">Full Name</label>
-  <label class="form-control"><?=$user['full_name'];?></label>
+  <label class="form-control" name="fullname"><?=$user['full_name'];?></label>
 </div>
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Mobile Number</label>
@@ -70,6 +70,9 @@ echo form_dropdown('passyear',$options,$user['passout_year'],$attribute);
 <label class="col-form-label" for="inputDefault" style="font-size: 15px;">View Achievements during College</label>
 <button type="button" class="btn btn-primary btn-sm" style="margin-left: 20px;" onclick="location.href='<?php echo base_url().'certificate/index/'.$this->session->userdata('user_id')?>'">View</button>
 </div>
+<?php
+echo '<input type="hidden" name="usertype" value="alumni">';
+?>
 <h3>Professional details </h3>
 <label class="col-form-label" for="inputDefault">Proffession</label>
 <?php
@@ -105,7 +108,7 @@ $options = array(
   'Others' =>'Others'
 );
 $attribute = 'class="col-form-label custom-select"';
-echo form_dropdown('income',$options,$user['proffession'],$attribute);
+echo form_dropdown('income',$options,$user['income'],$attribute);
  ?>
  <div>
  </div>

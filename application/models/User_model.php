@@ -104,6 +104,22 @@ class User_model extends CI_Model{
                 
         $this->db->where('userid',$userid);
         return $this->db->update('users',$data);
+    }
+
+    public function updateAlumni($userid,$filename){
+        $data = array(
+            'passout_year'=>$this->input->post('passyear'),
+            'proffession'=>$this->input->post('proffession'),
+            'company_name'=>$this->input->post('company_name'),
+            'income'=>$this->input->post('income'),
+            'profile_pic' => $filename,
+            'user_type' => $this->input->post('usertype'),
+        );
+        
+
+                
+        $this->db->where('userid',$userid);
+        return $this->db->update('users',$data);
 
     }
 
