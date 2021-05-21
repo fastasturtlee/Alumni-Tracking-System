@@ -91,7 +91,7 @@ $job_row = $this->career_model->getNumRow();
     <p class="card-text"><?=$careers[$i]->description?></p><hr>
     <div class = 'row'>
     <div class = 'col-4'>
-    <p class="card-text" ><?php echo '<b>JOb Location</b>: '.$careers[$i]->location ?> </p></div>
+    <p class="card-text" ><?php echo '<b>Job Location</b>: '.$careers[$i]->location ?> </p></div>
     <div class = 'col-4'>
     <p class="card-text" ><?php echo '<b>Duration of Job</b>: '.$careers[$i]->duration ?> </p>
     </div>
